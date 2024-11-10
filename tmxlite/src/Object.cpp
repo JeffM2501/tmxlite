@@ -32,6 +32,7 @@ source distribution.
 #endif
 #include <tmxlite/Object.hpp>
 #include <tmxlite/FreeFuncs.hpp>
+#include <tmxlite/FileReader.hpp>
 #include <tmxlite/Map.hpp>
 #include <tmxlite/Tileset.hpp>
 #include <tmxlite/detail/Log.hpp>
@@ -225,7 +226,8 @@ void Object::parseTemplate(const std::string& path, Map* map)
         auto templatePath = map->getWorkingDirectory() + "/" + path;
 
         pugi::xml_document doc;
-        if (!doc.load_file(templatePath.c_str()))
+
+        if (!ReadXMLDocument(doc,templatePath.c_str()))
         {
             Logger::log("Failed opening template file " + path, Logger::Type::Error);
             return;

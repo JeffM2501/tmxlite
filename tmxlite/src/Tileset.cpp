@@ -33,6 +33,7 @@ source distribution.
 #include <tmxlite/Tileset.hpp>
 #include <tmxlite/FreeFuncs.hpp>
 #include <tmxlite/detail/Log.hpp>
+#include <tmxlite/FileReader.hpp>
 
 #include <ctype.h>
 
@@ -91,7 +92,7 @@ void Tileset::parse(pugi::xml_node node, Map* map)
         }
 
         //see if doc can be opened
-        auto result = tsxDoc.load_file(path.c_str());
+        auto result = ReadXMLDocument(tsxDoc, path.c_str());
         if (!result)
         {
             Logger::log(path + ": Failed opening tsx file for tile set, tile set will be skipped", Logger::Type::Error);

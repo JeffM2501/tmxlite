@@ -30,6 +30,7 @@ source distribution.
 #include "detail/pugixml.hpp"
 #endif
 #include <tmxlite/FreeFuncs.hpp>
+#include <tmxlite/FileReader.hpp>
 #include <tmxlite/ObjectTypes.hpp>
 #include <tmxlite/detail/Log.hpp>
 
@@ -41,7 +42,7 @@ bool ObjectTypes::load(const std::string &path)
 
     //open the doc
     pugi::xml_document doc;
-    auto result = doc.load_file(path.c_str());
+    auto result = ReadXMLDocument(doc, path.c_str());
     if (!result)
     {
         Logger::log("Failed opening " + path, Logger::Type::Error);

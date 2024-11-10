@@ -1,5 +1,6 @@
 set(PROJECT_SRC
   ${PROJECT_DIR}/FreeFuncs.cpp
+  ${PROJECT_DIR}/FileReader.cpp
   ${PROJECT_DIR}/ImageLayer.cpp
   ${PROJECT_DIR}/Map.cpp
   ${PROJECT_DIR}/Object.cpp

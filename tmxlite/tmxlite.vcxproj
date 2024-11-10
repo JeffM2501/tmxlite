@@ -253,6 +253,7 @@
   <ItemGroup>
     <ClInclude Include="include\tmxlite\Config.hpp" />
     <ClInclude Include="include\tmxlite\FreeFuncs.hpp" />
+    <ClInclude Include="include\tmxlite\FileReader.hpp" />
     <ClInclude Include="include\tmxlite\ImageLayer.hpp" />
     <ClInclude Include="include\tmxlite\Layer.hpp" />
     <ClInclude Include="include\tmxlite\LayerGroup.hpp" />
@@ -268,6 +269,7 @@
   <ItemGroup>
     <ClCompile Include="src\detail\pugixml.cpp" />
     <ClCompile Include="src\FreeFuncs.cpp" />
+    <ClCompile Include="src\FileReader.cpp" />
     <ClCompile Include="src\ImageLayer.cpp" />
     <ClCompile Include="src\LayerGroup.cpp" />
     <ClCompile Include="src\Map.cpp" />

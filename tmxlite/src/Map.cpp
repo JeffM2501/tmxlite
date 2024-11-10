@@ -32,6 +32,7 @@ source distribution.
 #endif
 #include <tmxlite/Map.hpp>
 #include <tmxlite/FreeFuncs.hpp>
+#include <tmxlite/FileReader.hpp>
 #include <tmxlite/ObjectGroup.hpp>
 #include <tmxlite/ImageLayer.hpp>
 #include <tmxlite/TileLayer.hpp>
@@ -61,7 +62,7 @@ bool Map::load(const std::string& path)
 
     //open the doc
     pugi::xml_document doc;
-    auto result = doc.load_file(path.c_str());
+    auto result = ReadXMLDocument(doc, path.c_str());
     if (!result)
     {
         Logger::log("Failed opening " + path, Logger::Type::Error);
